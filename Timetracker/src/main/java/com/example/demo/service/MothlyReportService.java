@@ -1,4 +1,4 @@
-package com.Timetracker.service;
+package com.example.demo.service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,13 +9,13 @@ import org.joda.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Timetracker.RequestResponse.FirebaseEntry;
-import com.Timetracker.RequestResponse.FirebaseEntryJson;
-import com.Timetracker.RequestResponse.LogEntryRequest;
-import com.Timetracker.RequestResponse.MonthlyReponseEntity;
-import com.Timetracker.RequestResponse.MonthlyReportResponse;
-import com.Timetracker.RequestResponse.ReportRequest;
-import com.Timetracker.RequestResponse.UserProfile;
+import com.example.demo.RequestResponse.FirebaseEntry;
+import com.example.demo.RequestResponse.FirebaseEntryJson;
+import com.example.demo.RequestResponse.LogEntryRequest;
+import com.example.demo.RequestResponse.MonthlyReponseEntity;
+import com.example.demo.RequestResponse.MonthlyReportResponse;
+import com.example.demo.RequestResponse.ReportRequest;
+import com.example.demo.RequestResponse.UserProfile;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
@@ -41,9 +41,8 @@ public class MothlyReportService {
 
 				for (Integer month = reportRequst.getStartMonth(); month <= reportRequst.getEndMonth(); month++) {
 					Iterator<DocumentReference> refernce = dbStore.collection("timetracker").document(userId)
-							.collection("Year").document(Integer.toString(year))
-							.collection("Month").document(Integer.toString(month))
-							.collection("Date").listDocuments().iterator();
+							.collection("Year").document(Integer.toString(year)).collection("Month")
+							.document(Integer.toString(month)).collection("Date").listDocuments().iterator();
 					System.out.println(refernce.hasNext());
 					while (refernce.hasNext()) {
 						DocumentReference documentReference = refernce.next();
@@ -59,7 +58,7 @@ public class MothlyReportService {
 						for (FirebaseEntry entry : firebaseEntryJson.getEntryList()) {
 //					if(show!=entry.isShow())
 //						continue;
-							System.out.println(entry.getStartTime()+"          -           "+entry.getEndTime());
+							System.out.println(entry.getStartTime() + "          -           " + entry.getEndTime());
 							DateTime startTime = new DateTime(entry.getStartTime());
 							DateTime endTime = new DateTime(entry.getEndTime());
 							monthlyReponseEntity.setDate(startTime.getDayOfMonth());

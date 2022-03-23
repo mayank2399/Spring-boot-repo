@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Timetracker.RequestResponse.MonthlyReportResponse;
-import com.Timetracker.RequestResponse.ReportRequest;
-import com.Timetracker.service.MothlyReportService;
+import com.example.demo.RequestResponse.MonthlyReportResponse;
+import com.example.demo.RequestResponse.ReportRequest;
+import com.example.demo.service.MothlyReportService;
 
 @RestController
 @CrossOrigin

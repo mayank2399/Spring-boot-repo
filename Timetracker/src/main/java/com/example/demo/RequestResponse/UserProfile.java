@@ -1,4 +1,4 @@
-package com.Timetracker.RequestResponse;
+package com.example.demo.RequestResponse;
 
 import lombok.Getter;
 import lombok.Setter;

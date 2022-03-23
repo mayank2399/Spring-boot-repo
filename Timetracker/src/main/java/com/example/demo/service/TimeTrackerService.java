@@ -1,14 +1,14 @@
-package com.Timetracker.service;
+package com.example.demo.service;
 
 import java.util.ArrayList;
 
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 
-import com.Timetracker.RequestResponse.FirebaseEntry;
-import com.Timetracker.RequestResponse.FirebaseEntryJson;
-import com.Timetracker.RequestResponse.LogEntryRequest;
-import com.Timetracker.RequestResponse.UserProfile;
+import com.example.demo.RequestResponse.FirebaseEntry;
+import com.example.demo.RequestResponse.FirebaseEntryJson;
+import com.example.demo.RequestResponse.LogEntryRequest;
+import com.example.demo.RequestResponse.UserProfile;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
